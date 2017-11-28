@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>NEWSER</title>
+    <title>Sreams</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> 
     <link rel="stylesheet" href="style2.css"> 
     <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans|EB+Garamond|Montserrat:400,500,500i,600,600i,700,900,900i|Open+Sans:300,300i,400i,600,600i,700,700i,800,800i" rel="stylesheet">
@@ -21,25 +21,18 @@
             $(document).on("click", "input[name='send']",   
                 function (){
                 var comment = $("textarea[name='comment']").val ();
-                $("<div>"  + comment + "</div>") .appendTo(".content");
+                $("<p>"  + comment + "</p>") .prependTo(".content");
                 });
                $('comment').hide();
            });
-             
-           /*var now = new Date();
-            console.log(now);
-            var data = document.getElementsById('data');
-            data.innerHTML = now;
-            console.log(data);*/
-            
-});
+        });
     </script>
    
 </head>
 <body>  
     <div class="wrapper">
         <header>
-            <h1 class="caption">newser</h1>
+            <h1 class="caption">Sreams</h1>
             <img src="" class="header-icon">
         </header>
         
@@ -137,17 +130,18 @@
         
         
         
-        
+        <div class="add-com">   
+                <form name="form" action="#" method="post" id="form" style="display:none" onsubmit="return false">
+                   <input type="submit" name="send" value="Отправить" id="done" />
+                    <textarea id="textrea" name="comment" maxlength="100" cols="40" rows="1"></textarea>
+                    
+                </form>
+                 <a href="#" onclick="return false" id="add_comment" class="news-add">Опубликовать</a> 
+            </div>
         
         <div class="content">  
                 <!-- Add comment-->  
-            <div class="add-com">    
-                <form name="form" action="#" method="post" id="form" style="display:none" onsubmit="return false">
-                    <textarea id="textrea" name="comment" maxlength="100" cols="40" rows="1"></textarea>
-                    <input type="submit" name="send" value="Отправить" id="done" />
-                </form>
-                <a href="#" onclick="return false" id="add_comment" class="news-add">Опубликовать</a> 
-            </div>
+            
                
             <div class="content-post" id="content-post">
                 <div class="info-post fev">
