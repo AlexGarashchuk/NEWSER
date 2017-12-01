@@ -1,7 +1,7 @@
 <!DOCTYPE HTML>
 <html>
 <head>
-    <title>Sreams</title>
+    <title>Streams</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> 
     <link rel="stylesheet" href="style2.css"> 
     <link href="https://fonts.googleapis.com/css?family=Bubblegum+Sans|EB+Garamond|Montserrat:400,500,500i,600,600i,700,900,900i|Open+Sans:300,300i,400i,600,600i,700,700i,800,800i" rel="stylesheet">
@@ -11,13 +11,13 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
     
     <script type="text/javascript">
-        $(document).ready(function () {
+       /*$(document).ready(function () {
            $(document).on("click", "#add_comment", function () {
                var form = $("form[name='form']");
                form.css("display", "block");
                $("#add_comment").replaceWith(form);
             
-               
+              */
             $(document).on("click", "input[name='send']",   
                 function (){
                 var comment = $("textarea[name='comment']").val ();
@@ -32,11 +32,16 @@
 <body>  
     <div class="wrapper">
         <header>
-            <h1 class="caption">Sreams</h1>
-            <img src="" class="header-icon">
-        </header>
-        
-        <nav class="side">
+            <div class="caption">
+               <span>S</span>
+               <span>T</span>
+               <span>R</span>
+               <span>E</span>
+               <span>A</span>
+               <span>M</span>
+               <span>S</span>
+            </div>
+            <nav class="side">
                 <ul class="menu">
                     <li class="menu__list"><a href="#" class="ukrain">Локация</a>
                         <ul class="menu__drop">
@@ -125,32 +130,29 @@
                         </ul>
                     </li>
                 </ul>
-            </nav> 
-        
-        
-        
+        </nav> 
+        </header>
         
         <div class="add-com">   
-                <form name="form" action="#" method="post" id="form" style="display:none" onsubmit="return false">
-                   <input type="submit" name="send" value="Отправить" id="done" />
+                <form name="form" action="#" method="post" id="form" style="display" onsubmit="return false">
                     <textarea id="textrea" name="comment" maxlength="100" cols="40" rows="1"></textarea>
-                    
+                    <input type="submit" name="send" value="Отправить" id="done" />
                 </form>
-                 <a href="#" onclick="return false" id="add_comment" class="news-add">Опубликовать</a> 
-            </div>
+                 <!--<a href="#" onclick="return false" id="add_comment" class="news-add">Опубликовать</a> -->
+        </div>
         
         <div class="content">  
                 <!-- Add comment-->  
             
                
-            <div class="content-post" id="content-post">
-                <div class="info-post fev">
+            <div class="content-post fev" id="content-post">
+                <div class="info-post ">
                     <div class="date-bar">20/11/17</div>
                     <p>Хоча фраза й нісенітна, вона має давню історію. Ця фраза впродовж багатьох сторіч використовувалася друкарями для демонстрації найбільш </p>
                 </div>
                 <div class="like-post"><i class="fa fa-eye" aria-hidden="true"></i></div>
             </div>
-           <div class="content-post" id="content-post">
+           <div class="content-post lot" id="content-post">
                 <div class="info-post lot">
                     <div class="date-bar">20/11/17</div>
                     <p> Ця фраза впродовж багатьох сторіч використовувалася друкарями для демонстрації найбільш відмітних особливостей своїх шрифтів </p>
@@ -158,10 +160,17 @@
                 <div class="like-post"><i class="fa fa-eye" aria-hidden="true"></i></div>
             </div>
            
-            <div class="content-post" id="content-post">
+            <div class="content-post middle" id="content-post">
                 <div class="info-post middle">
                     <div class="date-bar">20/11/17</div>
                     <p>Хоча фраза й нісенітна, вона має давню історію. Ця фраза впродовж багатьох сторіч використовувалася друкарями для демонс друкарями для демонс </p>
+                </div>
+                <div class="like-post"><i class="fa fa-eye" aria-hidden="true"></i></div>
+            </div>
+                <div class="content-post blu" id="content-post">
+                <div class="info-post blu">
+                    <div class="date-bar">20/11/17</div>
+                    <p> Ця фраза впродовж багатьох сторіч використовувалася друкарями для демонстрації найбільш відмітних особливостей своїх шрифтів </p>
                 </div>
                 <div class="like-post"><i class="fa fa-eye" aria-hidden="true"></i></div>
             </div>
@@ -178,9 +187,9 @@
                     <a href="#" class="s__google"><i class="fa fa-odnoklassniki" aria-hidden="true"></i></a>
                     <a href="#" class="s__google"><i class="fa fa-skype" aria-hidden="true"></i></a>
                     <a href="#" class="s__google"><img src="img/telegram-green.png" class="fa telegram-img"></a>
-                    <a href="#" class="s__google"><img src="img/viber.png" class="fa viber-img"></a>
+                    <a href="#" class="s__google"><img src="img/viber.png" class="fa viber-img"></a
+                    >
                     <a href="#" class="s__google"><img src="img/youtube.png" class="youtube-img"></a>
-                    <a href="#" class="s__google"><i class="fa fa-youtube" aria-hidden="true"></i></a>
                     <a href="#" class="s__google"><img src="img/snapchat.png" class="fa snapchat"></a>
                     <a href="#" class="s__google"><i class="fa fa-whatsapp" aria-hidden="true"></i></a>
                 </div>
