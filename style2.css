@@ -12,38 +12,36 @@ a{
 }
 a:hover{
     text-decoration: none;
-    color: #198d3c;
     background: none;
+    color: none;
 }
 a:focus{
     color: #25aa0d;
 }
+a .fa{
+    font-size: 22px;
+    padding: 10px;
+    font-weight: 100;  
+}
+ ul, li{
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+.fa{
+    cursor: pointer;
+}
+.fa:hover{
+    color: #25aa0d;;
+}
+/*Стили для header*/
 header{
+    height: auto;
     padding: 10px 0 20px 0;
-    position: relative;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-}
-.few{
-    color: green;
-}
-.middle{
-    color: #eef70e;
-}
-.lot{
-    color: #f80808;
-}
-.buttom{
-    display: flex;
-    justify-content: center;
-}
-.wrapper{
-    height: 100vh;
-    width: 90%;
-    margin: 0 auto;
-    position: relative;
 }
 .caption{
     text-transform: uppercase;
@@ -55,88 +53,10 @@ header{
     width: 50%;
     order: 2;
 }
-.content{
-    padding: 5% 0;
-    width: 100%;
-    height: 90vh;
-    position: relative;
-}
-.commit{
-    display: flex;
-    justify-content: space-between;
-}
-.post{
-    margin-left: 2%;
-}
-.add-com{
-    padding: 1% 0;
-}
-
-.fa{
-    cursor: pointer;
-}
-.telegram-img{
-    width: 42px;
-    height: auto;
-}
-.viber-img{
-    width: 41px;
-    height: auto; 
-}
-.youtube-img{
-    width: 41px;
-    padding: 0px;
-    margin: 0;
-    height: auto;
-}
-.snapchat{
-   width: 41px;
-    height: auto;
-}
-a .fa{
-    font-size: 22px;
-    padding: 10px;
-    font-weight: 100;  
-}
-.nav-pills{
-    display: flex;
-    justify-content: space-around;
-}
-.dropdown-menu{
-    background: #000;
-}
-.list{
-    background: #000;
-}
-/*Style fo form*/
-#form{
-    display: flex;
-    align-items: center;
-}
-#textrea{
-    background: #000;
-    outline:none;
-    border: none; 
-    width: 100%; 
-    box-shadow: 0 0px 5px 2px #25aa0d;
-    color: #25aa0d
-}
-#done{
-    background: none;
-    color: #25aa0d;
-    border: #25aa0d;
-    box-shadow: 0 0px 5px 2px;
-    cursor: pointer;
-}
-.like-post{
-    padding-left: 10px;
-}
-
-/*footer head*/
-.footer{
-    bottom: 0;
-    position: absolute;
-    width: 100%;
+@media (max-width:960px){
+    .caption{
+        width: 100%;
+    }
 }
 .side{
     width: 50%;
@@ -172,14 +92,16 @@ a .fa{
 .menu__drop a:hover{
     padding: 0 5px 10px 0px;
 }
- ul, li{
-    list-style: none;
-    margin: 0;
-    padding: 0
-}
-.list-item{
+/*wrapper*/
+.wrapper{
     display: flex;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100vh;
+    min-height: 600px;
+    width: 90%;
+    margin: 0 auto;
+    position: relative;
 }
 /*Стили для подменю*/
 .menu__list {
@@ -207,7 +129,7 @@ a .fa{
     position: absolute;
     z-index: 999;
     top: 0;
-    left: 100%;
+    left: 130%;
     bottom: 9999em;
     border-left: 10px solid transparent;
     opacity: 0;
@@ -238,17 +160,92 @@ a .fa{
     font-size: 12px;
     bottom: 0;
 }
+.menu__drop_uk:hover .input-archive{
+    display: block;
+    transition: 1s all;
+}
+.add-com{
+    padding: 1% 0;
+}
+.few{
+    color: #25aa0d;
+}
+.middle{
+    color: #eef70e;
+}
+.lot{
+    color: #f80808;
+}
+.blu{
+    color: blue;
+}
 
+/*Style fo form*/
+#form{
+    width: 100%;
+}
+#textrea{
+    background: #000;
+    outline:none;
+    border: none; 
+    width: 100%; 
+    box-shadow: 0 0px 5px 2px #25aa0d;
+    color: #25aa0d
+}
+#done{
+    background: none;
+    color: #25aa0d;
+    border: #25aa0d;
+    box-shadow: 0 0px 5px 2px;
+    cursor: pointer;
+}
+#add_comment{
+    display: flex;
+}
+@media (max-width:960px){
+    .wrapper{
+        height: 100%;
+        bottom: 0;
+    }
+}
+.content{
+    padding: 5% 0;
+    width: 100%;
+    height: 90vh;
+    position: relative;
+}
+.content-post{
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+}
+.info-post{
+    font-size: 14px;
+    display: flex;
+    align-self: flex-start;
+    
+}
+.info-post p{
+    padding-left: 30px;
+    text-align:justify;
+}
+.like-post{
+    padding-left: 10px;
+} 
+.post{
+    margin-left: 2%;
+}
 
-
-
-
-
-
-
-
-
-
+/*Footer*/
+.footer{
+    width: 100%;
+}
+@media (max-width:960px){
+    .footer{
+        position: absolute;
+        bottom: 0;
+    }
+}
 .footer-social__wrapper{
     margin: auto;
     padding-bottom: 20px;
@@ -274,52 +271,7 @@ a .fa{
     flex-wrap: wrap;
     justify-content: center;
 }
-
-.content-post{
-    display: flex;
-    justify-content: space-between;
-    padding: 0;
-}
-.info-post{
-    font-size: 14px;
-    display: flex;
-    align-self: flex-start;
-    
-}
-.info-post p{
-    padding-left: 30px;
-    text-align:justify;
-}
-
-.btn {
-    position: relative;
-    display: inline-block;
-    height: 50px; width:50%;
-    text-align: center;
-    color: red;
-    background: gray;
-    line-height: 50px;
-    text-decoration: none;
-    padding-bottom:15%;
-    background-clip:content-box;
-    overflow:hidden;
-}
-.btn:after {
-    content: "";
-    position: absolute;
-    top:50px; left: 0;
-    background-color:inherit;
-    padding-bottom:50%; width:57.7%;
-    z-index:-1;
-    
-    -webkit-transform-origin:0 0;
-    -ms-transform-origin:0 0;
-    transform-origin:0 0;
-    
-    -webkit-transform: rotate(-30deg) skewX(30deg);;
-    -ms-transform: rotate(-30deg) skewX(30deg);
-    transform: rotate(-30deg) skewX(30deg);
-}
+/*Стили для подменю выбора даты*/
 .input-archive::-webkit-calendar-picker-indicator {
     color: green;
     opacity: 1;
@@ -329,11 +281,6 @@ a .fa{
 .input-archive{
     display: none;
 }
-
-
-
-
-
 input[type=date] {
   height: 35px;
   margin: 0 auto;
@@ -346,33 +293,38 @@ input[type=date] {
   padding: 0 3px;
   color: green;
 } 
-  input[type=date]::-webkit-clear-button {
+input[type=date]::-webkit-clear-button {
     font-size: 18px;
     height: 30px;
     position: relative;
     margin-right: 4px;
   }
-  input[type=date]::-webkit-inner-spin-button {
+input[type=date]::-webkit-inner-spin-button {
     height: 30px;
-      background: red;
+    background: red;
   }
-  input[type=date]::-webkit-calendar-picker-indicator {
+input[type=date]::-webkit-calendar-picker-indicator {
     font-size: 18px;
 }
-
-    input[type=date]::-webkit-inner-spin-button { display: none; }
-
-      
-.menu__drop_uk:hover .input-archive{
-    display: block;
-    transition: 1s all;
+input[type=date]::-webkit-inner-spin-button { display: none; } 
+    
+/*Стили для иконок*/
+.telegram-img{
+    width: 40px;
+    height: auto;
 }
-.blu{
-    color: blue;
+.viber-img{
+    width: 40px;
+    height: auto; 
 }
-        
-
-
+.youtube-img{
+    width: 40px;
+    height: auto;
+}
+.snapchat{
+    width: 40px;
+    height: auto;
+}
 
 
 
