@@ -1,0 +1,192 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+    <title>Streams</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous"> 
+    <link rel="stylesheet" href="style.css"> 
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+           $(document).on("click", "#add_comment", function () {
+               var form = $("form[name='form']");
+               form.css("display", "flex");
+               $("#add_comment").replaceWith();
+            
+               
+            $(document).on("click", "input[name='send']",   
+                function (){
+                var comment = $("textarea[name='comment']").val ();
+                $("<p>"  + comment + "</p>") .prependTo(".content");
+                });
+               $('comment').hide();
+           });
+        });
+    </script>
+</head>
+<body>  
+    <div class="wrapper">
+        <header>
+            <div class="caption">
+                <img src="img/stream-logo.png">
+            </div>
+                <nav class="side">
+                    <ul class="menu">
+                    <li class="menu__list"><a href="#" class="ukrain">Локация</a>
+                        <ul class="menu__drop">
+                            <li class="menu__drop_uk"><a href="#">Украина</a>
+                                <ul class="menu__drop_city">
+                                    <li><a href="#">Вінниця</a></li> 
+                                    <li><a href="#">Дніпро</a></li> 
+                                    <li><a href="#">Донецьк</a></li> 
+                                    <li><a href="#">Житомир</a></li> 
+                                    <li><a href="#">Запоріжжя</a></li> 
+                                    <li><a href="#">Івано-Франківськ</a></li> 
+                                    <li><a href="#">Київ</a></li> 
+                                    <li><a href="#">Луганськ</a></li> 
+                                    <li><a href="#">Луцьк</a></li> 
+                                    <li><a href="#">Львів</a></li> 
+                                    <li><a href="#">Миколаїв</a></li> 
+                                    <li><a href="#">Одеса</a></li> 
+                                    <li><a href="#">Полтава</a></li> 
+                                    <li><a href="#">Рівне</a></li> 
+                                    <li><a href="#">Суми</a></li> 
+                                    <li><a href="#">Тернопіль</a></li> 
+                                    <li><a href="#">Ужгород</a></li> 
+                                    <li><a href="#">Харків</a></li> 
+                                    <li><a href="#">Херсон</a></li> 
+                                    <li><a href="#">Хмельницький</a></li> 
+                                    <li><a href="#">Черкаси</a></li> 
+                                    <li><a href="#">Чернівці</a></li> 
+                                    <li><a href="#">Чернігів</a></li> 
+                                </ul>
+                            </li>
+                            <li class="menu__drop_ru"><a href="#">Россия</a>
+                                <!--<ul class="menu__drop_city_ru">
+                                    <li><a href="#">Амурская</a></li> 
+                                    <li><a href="#">Архангельская</a></li> 
+                                    <li><a href="#">Астраханская</a></li> 
+                                    <li><a href="#">Белгородская</a></li> 
+                                    <li><a href="#">Юрянская</a></li> 
+                                    <li><a href="#">Челябинская</a></li> 
+                                    <li><a href="#">Иркутская</a></li> 
+                                    <li><a href="#">Ивановская</a></li> 
+                                    <li><a href="#">Калининградская</a></li> 
+                                    <li><a href="#">Калужская</a></li> 
+                                    <li><a href="#">Камеровская</a></li> 
+                                    <li><a href="#">Кировская</a></li> 
+                                    <li><a href="#">Костромская</a></li> 
+                                    <li><a href="#">Курганская</a></li> 
+                                    <li><a href="#">Ленинградская</a></li> 
+                                    <li><a href="#">Липецкая</a></li> 
+                                    <li><a href="#">Магаданская</a></li> 
+                                    <li><a href="#">Московская</a></li> 
+                                    <li><a href="#">Нижегорская</a></li> 
+                                    <li><a href="#">Новгородская</a></li> 
+                                    <li><a href="#">Новосибирская</a></li> 
+                                    <li><a href="#">Омская</a></li> 
+                                    <li><a href="#">Оренбургская</a></li> 
+                                </ul> -->
+                            </li>
+                            <li class=""><a href="#">Беллорусия</a></li>
+                            <li class=""><a href="#">США</a></li>
+                        </ul>   
+                    </li>           
+                    <li class="menu__list"><a href="#">Тема</a></li>
+                    <li class="menu__list"><a href="#">Архив</a>
+                        <ul class="menu__drop">
+                            <li class="menu__drop_uk"><a href="#">2016</a>
+                            <input type="date" name="calendar" value="2016-01-01"
+                            max="2016-12-31" min="2016-01-01" class="input-archive">
+                            </li>
+                            <li class="menu__drop_uk"><a href="#">2017</a>
+                            <input type="date" name="calendar" value="2017-01-01"
+                            max="2017-31-12" min="2017-01-01" class="input-archive">
+                            </li>
+                            <li class="menu__drop_uk"><a href="#">2018</a>
+                            <input type="date" name="calendar" value="2018-01-01"
+                            max="2018-12-31" min="2018-01-01" class="input-archive">
+                            </li>
+                            <li class="menu__drop_uk"><a href="#">2019</a></li>
+                        </ul> 
+                    </li>
+                    <li class="menu__list"><a href="#">Язык</a>
+                        <ul class="menu__drop">
+                            <li class="menu__drop_uk"><a href="#">Українська</a></li>
+                            <li class="menu__drop_uk"><a href="#">Русский</a></li>
+                            <li class="menu__drop_uk"><a href="#">Белорусский</a></li>
+                            <li class="menu__drop_uk"><a href="#">English</a></li>
+                        </ul>
+                    </li>
+                </ul>
+                </nav> 
+        </header>
+        
+        <div class="add-com">   
+            <form name="form" action="#" method="post" id="form" style="display:none" onsubmit="return false">
+                <textarea id="textrea" name="comment" maxlength="100" cols="40" rows="1"></textarea>
+                <input type="submit" name="send" value="Отправить" id="done" />
+            </form>
+            <form name="form" action="#" method="post" id="add_comment" class="news-add" onsubmit="return false">
+                <textarea id="textrea" name="comment" maxlength="100" cols="40" rows="1"></textarea>
+                <input type="submit" name="send" value="Отправить" id="done" />
+            </form>
+                 <!--<a href="#" onclick="return false" id="add_comment" class="news-add">Опубликовать</a> -->
+        </div>
+        <div class="content">  
+                <!-- Add comment-->  
+             
+            <div class="content-post green" id="content-post">
+                <div class="info-post ">
+                    <div class="date-bar">20/11/17</div>
+                    <p>Хоча фраза й нісенітна, вона має давню історію. Ця фраза впродовж багатьох сторіч  </p>
+                </div>
+                <div class="like-post"><img src="img/eye-green.png" class="eye fa"> </div>
+            </div>
+           <div class="content-post red" id="content-post">
+                <div class="info-post red">
+                    <div class="date-bar">20/11/17</div>
+                    <p> Ця фраза впродовж багатьох сторіч використовувалася друкарями для демонстрації найбільш відмітних</p>
+                </div>
+                <div class="like-post"><img src="img/eye-red.png" class="eye fa"></div>
+            </div>
+           
+            <div class="content-post yellow" id="content-post">
+                <div class="info-post yellow">
+                    <div class="date-bar">20/11/17</div>
+                    <p>Хоча фраза й нісенітна, вона має давню історію. Ця фраза впродовж багатьох сторіч  </p>
+                </div>
+                <div class="like-post"><img src="img/eye-yellow.png" class="eye fa"></div>
+            </div>
+                <div class="content-post blu" id="content-post">
+                <div class="info-post blu">
+                    <div class="date-bar">20/11/17</div>
+                    <p> Ця фраза впродовж багатьох сторіч використовувалася друкарями для демонстрації </p>
+                </div>
+                <div class="like-post"><img src="img/eye-blue.png" class="eye fa"></div>
+            </div>
+                 
+        </div>
+             <!--FOOTER-->
+        <div class="footer">
+            <div class="footer-social__wrapper">
+                <div class="social">
+                    <a href="#" class="s__linkedin"><img src="img/linkedin-logo.png" class="fa linkedin-img"></a>
+                    <a href="#" class="s__instagram"><img src="img/instagram.png" class="fa instagram-img"></a>
+                    <a href="#" class="s__twitter"><img src="img/twitter.png" class="fa twitter-img"></a>
+                    <a href="#" class="s__facebook"><img src="img/facebook-logo.png" class="fa facebook-img"></a>
+                    <a href="#" class="s__odnoklaniki"><img src="img/odnoklassniki.png" class="fa odnoklassniki-img"></a>
+                    <a href="#" class="s__skype"><img src="img/skype.png" class="fa skype-img"></a>
+                    <a href="#" class="s__whatsapp"><img src="img/whatsapp.png" class="fa whatsapp-img"></a>
+                    <a href="#" class="s__telegram"><img src="img/telegram.png" class="fa telegram-img"></a>
+                    <a href="#" class="s__youtube"><img src="img/youtube.png" class="youtube-img"></a>
+                    <a href="#" class="s__snapchat"><img src="img/snapchat.png" class="fa snapchat-img"></a>
+                    <a href="#" class="s__viber"><img src="img/viber.png" class="fa viber-img"></a>
+                </div>
+            </div>
+             
+        </div>
+    </div>
+</body>
+</html>
