@@ -13,20 +13,22 @@
                var form = $("form[name='form']");
                form.css("display", "flex");
                $("#add_comment").replaceWith();
-            
+             });
                
             $(document).on("click", "input[name='send']",   
                 function (){
                 var comment = $("textarea[name='comment']").val ();
+                $("textarea[name='comment']").val ("");
                 $("<p>"  + comment + "</p>") .prependTo(".content");
                 });
                $('comment').hide();
-           });
+          
         });
     </script>
 </head>
 <body>  
     <div class="wrapper">
+    <div class="top">
         <header>
             <div class="caption">
                 <img src="img/stream-logo.png">
@@ -125,15 +127,16 @@
         
         <div class="add-com">   
             <form name="form" action="#" method="post" id="form" style="display:none" onsubmit="return false">
-                <textarea id="textrea" name="comment" maxlength="100" cols="40" rows="1"></textarea>
+                <textarea id="textrea" name="comment" maxlength="100" cols="40" rows="1" autofocus></textarea>
                 <input type="submit" name="send" value="Отправить" id="done" />
             </form>
             <form name="form" action="#" method="post" id="add_comment" class="news-add" onsubmit="return false">
-                <textarea id="textrea" name="comment" maxlength="100" cols="40" rows="1"></textarea>
+                <textarea id="textrea" name="comment" maxlength="100" cols="40" rows="1" autofocus></textarea>
                 <input type="submit" name="send" value="Отправить" id="done" />
             </form>
                  <!--<a href="#" onclick="return false" id="add_comment" class="news-add">Опубликовать</a> -->
         </div>
+    </div>
         <div class="content">  
                 <!-- Add comment-->  
              
