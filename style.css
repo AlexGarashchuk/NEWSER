@@ -44,11 +44,11 @@ ul, li{
     position: fixed;
     background: #000;
     z-index: 1;
+    padding-bottom: 2%
 }
 @media(max-width:960px){
     .top{
         width: 100%;
-        padding: 2%;
     }
 }
 header{
@@ -222,7 +222,28 @@ header{
     color: #25aa0d;
     resize: none;
 }
-#done{
+#textrea::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+#textrea::-webkit-scrollbar{
+	width: 12px;
+	background: #25aa0d;
+}
+
+#textrea::-webkit-scrollbar-thumb{
+    border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: #000;
+}
+.js_style{
+    background: #25aa0d;
+    color: #fff;
+}
+#active{
     margin-left: 20px;
     margin-bottom: 10px;
     position: relative;
@@ -253,7 +274,21 @@ header{
    4px 16px 7px rgba(0,0,0,.3); 
   transition: .4s;
 }
-#done:focus{
+#hidden{
+    height: auto;
+    position: absolute;
+    right: 0;
+    display: inline-block;
+    font-weight: bold;
+    color: #25aa0d;
+    font-size: 25px;
+    border: none;
+    text-decoration: none;
+    padding: .3em .8em .3em .6em;
+    background: transparent;
+    outline: none;
+}
+#active:focus{
     outline: none;
 }
 #add_comment{
@@ -263,9 +298,8 @@ header{
     #add_comment{
         flex-wrap: wrap;
     }
-    #done{
-        position: absolute;
-        right: 0;
+    #active{
+        display: none;
     }
 }
 .content{
