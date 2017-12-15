@@ -12,18 +12,44 @@
             $(document).ready(function () {
                 $('.js_done').on('click', function (){
                    var  $comment = $('#textrea').val();
+                    
                     if($comment.length) {
-                       console.log ($comment);
-                        $('.content').prepend('<p>' +  $comment);
+                        var newdate;
+                        
+                        var date = new Date();
+                        var now_m = date.getMonth();
+                        var monts = ["1","2","3","4","5","6","7","8","9","10","11","12"];
+                        var yy = date.getFullYear() % 100;
+                        if (yy < 10) yy = '0' + yy;
+                        var min = date.getMinutes() % 100;
+                        if (min <10) min ='0' + min;
+                        
+                        
+                        newdate = date.getDate() + '/' + (monts[now_m]) + '/' + yy + '  ' +   date.getHours() + ':' + min;
+        
+ 
+                       
+                        
+                        $('.content').prepend('<div class="content-post"><div class="info-post"><div class="date-bar">'+ newdate +'</div><p class="new-comment">'+ $comment +'</p></div><div>');
+                       
                         $('#textrea').val("");
                        };
             });
                 $('#textrea').keyup(function () {
                     var $comment = $('#textrea').val();
                     if($comment.length == 100) {
-                       $('#textrea').css({'background':'#25aa0d', 'color': '#000'});
-                };
+                       $('#textrea').addClass("comment_js"),
+                           $('.js_done').addClass("btn_js");
+                }
+                    else{
+                       $('#textrea').removeClass("comment_js"),
+                           $('.js_done').removeClass("btn_js");
+                    };  
             });
+                $('.js_done').click(function(){
+                    $('#textrea').removeClass("comment_js"),
+                           $('.js_done').removeClass("btn_js");
+                });
          });
     </script>
 </head>
@@ -128,41 +154,44 @@
         
         <div class="add-com">   
             <form name="form" action="#" method="post" id="add_comment" class="news-add" onsubmit="return false">
-                <textarea id="textrea" class="js_style" name="comment" maxlength="100" cols="40" rows="1" autofocus></textarea>
-                <input type="submit" name="send" value="Отправить" id="active" class="js_done"/>
-                <input type="submit" name="send" value="&#62" id="hidden" class="js_done"/>
+                <textarea id="textrea" class="js_style text_comment" name="comment" maxlength="100" cols="40" rows="1" autofocus></textarea>
+                <input type="submit" name="send" value="Отправить" id="active" class="js_done active-input"/>
+                <input type="submit" name="send" value="&#62" id="hidden" class="js_done hidden-input"/>
             </form>
         </div>
     </div>
         <div class="content">  
                 <!-- Add comment-->  
-             
+            
+            
+            
+            
             <div class="content-post green" id="content-post">
-                <div class="info-post ">
-                    <div class="date-bar">20/11/17</div>
-                    <p>Хоча фраза й нісенітна, вона має давню історію. Ця фраза впродовж багатьох сторіч</p>
+                <div class="info-post">
+                    <div class="date-bar">20/11/17 10:50</div>
+                    <p class="new-comment">Хоча фраза й нісенітна, вона має давню історію. Ця фраза впродовж багатьох сторіч</p>
                 </div>
                 <div class="like-post"><img src="img/eye-green.png" class="eye fa"> </div>
             </div>
            <div class="content-post red" id="content-post">
                 <div class="info-post red">
-                    <div class="date-bar">20/11/17</div>
-                    <p> Ця фраза впродовж багатьох сторіч використовувалася друкарями для демонстрації найбільш відмітних</p>
+                    <div class="date-bar">20/11/17 10:50</div>
+                    <p class="new-comment"> Ця фраза впродовж багатьох сторіч використовувалася друкарями для демонстрації найбільш відмітних</p>
                 </div>
                 <div class="like-post"><img src="img/eye-red.png" class="eye fa"></div>
             </div>
            
             <div class="content-post yellow" id="content-post">
                 <div class="info-post yellow">
-                    <div class="date-bar">20/11/17</div>
-                    <p>Хоча фраза й нісенітна, вона має давню історію. Ця фраза впродовж багатьох сторіч  </p>
+                    <div class="date-bar">20/11/17 10:50</div>
+                    <p class="new-comment">Хоча фраза й нісенітна, вона має давню історію. Ця фраза впродовж багатьох сторіч  </p>
                 </div>
                 <div class="like-post"><img src="img/eye-yellow.png" class="eye fa"></div>
             </div>
                 <div class="content-post blu" id="content-post">
                 <div class="info-post blu">
-                    <div class="date-bar">20/11/17</div>
-                    <p> Ця фраза впродовж багатьох сторіч використовувалася друкарями для демонстрації </p>
+                    <div class="date-bar">20/11/17 10:50</div>
+                    <p class="new-comment"> Ця фраза впродовж багатьох сторіч використовувалася друкарями для демонстрації </p>
                 </div>
                 <div class="like-post"><img src="img/eye-blue.png" class="eye fa"></div>
             </div>
