@@ -1,8 +1,9 @@
+
 body{
     padding: 0;
     margin: 0;
     font-family:'Consolas';
-    font-size: 16px;
+    font-size: 18px;
     color: #25aa0d;
     background: #000;
 }
@@ -44,11 +45,14 @@ ul, li{
     position: fixed;
     background: #000;
     z-index: 1;
-    padding-bottom: 2%
+    padding-bottom: 2%;
 }
 @media(max-width:960px){
     .top{
         width: 100%;
+        display: flex;
+        padding: 2%;
+        justify-content: space-between;
     }
 }
 header{
@@ -58,26 +62,39 @@ header{
     justify-content: space-between;
     align-items: center;
 }
+@media(max-width:960px){
+    header{
+        top: 15px;
+        z-index: 2;
+    }
+}
 .caption{
     text-transform: uppercase;
-    font-size: 40px;
+    font-size: 3em;
     font-weight: bold;
-    letter-spacing: 0.8em;
     display: flex;
     justify-content: space-between;
     width: 50%;
     order: 2;
     position: relative;
     border:1px solid #000;
-    text-decoration: none;
-    text-shadow: -2px 2px rgba(255,255,255,.3);
     line-height:.6;
     padding-right: 2%;
+    letter-spacing: 5px
+}
+.caption p{
+    text-align: right;
+    width: 100%;
+}
+.caption span{
+    color:#40e622;
+    font-size: 1.5em
 }
 @media (max-width:960px){
     .caption{
         width: 100%;
         order: 1;
+        display: none;
     }
 }
 .caption img{
@@ -90,7 +107,10 @@ header{
 @media (max-width:960px){
     .side{
         width: 100%;
-        order: 2
+        order: 2;
+        display: none;
+        position: absolute;
+        top:70px;
     }
 }
 .menu{
@@ -117,11 +137,36 @@ header{
     transition: 0.5s ease;
 }
 .menu a:hover{
-    padding: 0 5px 0 0px;
     transition: 0.5s;
 }
 .menu__drop a:hover{
     padding: 0 5px 10px 0px;
+}
+#burg a{
+    display: block;
+    width: 70px;
+}
+#burg a span{
+    display: flex;
+    background: #25aa0d;
+    margin: 10px 0;
+    width: 30px;
+    height: 1.1px;
+}
+#burg{
+    width: 50px;
+    display: none;
+}
+@media(max-width:960px){
+    #burg{
+        display: block;
+    }
+}
+.bar{
+    display: inline-flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
 }
 /*wrapper*/
 .wrapper{
@@ -160,7 +205,7 @@ header{
     z-index: 2;
 }
 .menu__list:hover .menu__drop{
-    left:0;
+    left:-10px;
     z-index: 999;
 } 
 .menu__drop_city{
@@ -206,6 +251,11 @@ header{
     padding: 1% 2% 1% 0;
     background: #000;
 }
+@media(max-width:960px){
+    .add-com{
+        width: 100%;
+    } 
+}
 
 /*Style fo form*/
 #form{
@@ -250,12 +300,9 @@ header{
 }
 @media(max-width:960px){
     .text_comment{
-        border: 1px solid #25aa0d;
+        border: 2px solid #25aa0d;
         padding-right: 2rem;
     }
-}
-.js_style{
-    
 }
 #active{
     margin-left: 20px;
@@ -297,9 +344,14 @@ header{
     font-size: 25px;
     border: none;
     text-decoration: none;
-    right:1em;
+    right:1.5em;
     background: transparent;
     outline: none;
+}
+@media(max-width:960px){
+    .hidden-input{
+        right: 1em;
+    }
 }
 #active:focus{
     outline: none;
@@ -319,31 +371,22 @@ header{
     }
 }
 .content{
-    padding: 5% 0 5% 40px;
     width: 100%;
-    position: relative;
-    margin-top: 160px;
-
 }
 .content-post{
     display: flex;
     justify-content: space-between;
     padding: 0;
     width: 100%;
+    margin-bottom: 7px;
 }
 .info-post{
-    font-size: 0.8rem;
-    display: flex;
-    align-items:stretch;
+    font-size: 1em;
     width: 85%;
-    }
-.new-comment{
-    font-size: 1rem;
-    padding-left: 2%;
-    width: 88%;
     word-wrap: break-word;
-}
+    }
 .like-post{
+    width: 5%;
     padding-left: 10px;
     width:2.5rem;
     height:2.5rem;
@@ -353,12 +396,18 @@ header{
     height: auto;
 }
 .date-bar{
-    font-size: 1.1em;
-    width:100px;
-    margin-right:;
-    word-wrap:break-word;
+    width: 50px;
+    font-size: 1em;
+    word-wrap:normal;
+    padding-right: 2%;
+    float: left;
 }
-@media(max-width:960px){
+.new-comment{
+    font-size: 1em;
+    word-wrap: break-word;
+    width: 100%;
+}
+/*@media(max-width:960px){
     .date-bar{
         min-width: 100px;
     }
@@ -367,7 +416,7 @@ header{
     .date-bar{
        width: 25%;
     }
-}
+}*/
 .green{
     color: #25aa0d;
 }
@@ -383,22 +432,25 @@ header{
 .post{
     margin-left: 2%;
 }
-
+.main{
+    display: flex;
+    width: 100%;
+    position: relative;
+    margin-top: 180px;
+}
+@media(max-width:960px){
+    .main{
+        margin-top: 120px;
+    }
+}
 /*Footer*/
 .footer{
-    top:160px;
-    padding-top: 5%;
-    width: auto;
+    width: 50px;
     /*position: fixed;
     bottom: 0;*/
-    position: fixed;
+    position: relative;
     background: #000;
 }
-/*@media (max-width:960px){
-    .footer{
-        width: 100%;
-    }
-}*/
 .footer-social__wrapper{
     margin: auto;
     padding-bottom: 20px;

@@ -21,23 +21,23 @@
                         var monts = ["1","2","3","4","5","6","7","8","9","10","11","12"];
                         var yy = date.getFullYear() % 100;
                         if (yy < 10) yy = '0' + yy;
+                        var hours = date.getHours
                         var min = date.getMinutes() % 100;
                         if (min <10) min ='0' + min;
                         
+//                         newdate =date.getDate() + '/' + (monts[now_m]) + '/' + yy + '  ' +    date.getHours() + ':' + min;
+                        newdate =date.getHours() + ':' + min;
                         
-                        newdate = date.getDate() + '/' + (monts[now_m]) + '/' + yy + '  ' +   date.getHours() + ':' + min;
-        
- 
-                       
+//                      $('.content').prepend('<div class="content-post"><div class="info-post"><div class="date-bar">'+ newdate +'</div><p class="new-comment">'+ $comment +'</p></div><div>');
                         
-                        $('.content').prepend('<div class="content-post"><div class="info-post"><div class="date-bar">'+ newdate +'</div><p class="new-comment">'+ $comment +'</p></div><div>');
+                        $('.content').prepend('<div class="content-post"><div class="info-post"><span class="date-bar">'+ newdate +'</span><p class="new-comment">'+ $comment +'</p></div><div class="like-post"><img src="img/eye-red.png" class="eye fa"></div</div>')
                        
                         $('#textrea').val("");
                        };
             });
                 $('#textrea').keyup(function () {
                     var $comment = $('#textrea').val();
-                    if($comment.length == 100) {
+                    if($comment.length == 70) {
                        $('#textrea').addClass("comment_js"),
                            $('.js_done').addClass("btn_js");
                 }
@@ -50,6 +50,10 @@
                     $('#textrea').removeClass("comment_js"),
                            $('.js_done').removeClass("btn_js");
                 });
+                
+                $('#burg').click(function(){
+                    $('.side').slideToggle();
+                });
          });
     </script>
 </head>
@@ -58,9 +62,9 @@
     <div class="top">
         <header>
             <div class="caption">
-                <img src="img/stream-logo.png">
+                <p><span>s</span>treams</p>
             </div>
-                <nav class="side">
+            <nav class="side">
                     <ul class="menu">
                     <li class="menu__list"><a href="#" class="ukrain">Локация</a>
                         <ul class="menu__drop">
@@ -150,54 +154,25 @@
                     </li>
                 </ul>
                 </nav> 
+            <div id="burg">
+                    <a href="#">
+                        <span class="bar" id="top"></span>
+                        <span class="bar" id="middle"></span>
+                        <span class="bar" id="bottom"></span>
+                    </a>
+                </div>
+
         </header>
-        
         <div class="add-com">   
             <form name="form" action="#" method="post" id="add_comment" class="news-add" onsubmit="return false">
-                <textarea id="textrea" class="js_style text_comment" name="comment" maxlength="100" cols="40" rows="1" autofocus></textarea>
+                <textarea id="textrea" class="js_style text_comment" name="comment" maxlength="70" cols="40" rows="1" autofocus></textarea>
                 <input type="submit" name="send" value="Отправить" id="active" class="js_done active-input"/>
                 <input type="submit" name="send" value="&#62" id="hidden" class="js_done hidden-input"/>
             </form>
         </div>
     </div>
-        <div class="content">  
-                <!-- Add comment-->  
-            
-            
-            
-            
-            <div class="content-post green" id="content-post">
-                <div class="info-post">
-                    <div class="date-bar">20/11/17 10:50</div>
-                    <p class="new-comment">Хоча фраза й нісенітна, вона має давню історію. Ця фраза впродовж багатьох сторіч</p>
-                </div>
-                <div class="like-post"><img src="img/eye-green.png" class="eye fa"> </div>
-            </div>
-           <div class="content-post red" id="content-post">
-                <div class="info-post red">
-                    <div class="date-bar">20/11/17 10:50</div>
-                    <p class="new-comment"> Ця фраза впродовж багатьох сторіч використовувалася друкарями для демонстрації найбільш відмітних</p>
-                </div>
-                <div class="like-post"><img src="img/eye-red.png" class="eye fa"></div>
-            </div>
-           
-            <div class="content-post yellow" id="content-post">
-                <div class="info-post yellow">
-                    <div class="date-bar">20/11/17 10:50</div>
-                    <p class="new-comment">Хоча фраза й нісенітна, вона має давню історію. Ця фраза впродовж багатьох сторіч  </p>
-                </div>
-                <div class="like-post"><img src="img/eye-yellow.png" class="eye fa"></div>
-            </div>
-                <div class="content-post blu" id="content-post">
-                <div class="info-post blu">
-                    <div class="date-bar">20/11/17 10:50</div>
-                    <p class="new-comment"> Ця фраза впродовж багатьох сторіч використовувалася друкарями для демонстрації </p>
-                </div>
-                <div class="like-post"><img src="img/eye-blue.png" class="eye fa"></div>
-            </div>
-                 
-        </div>
-             <!--FOOTER-->
+        <div class="main">
+                  <!--FOOTER-->
         <div class="footer">
             <div class="footer-social__wrapper">
                 <div class="social">
@@ -213,9 +188,48 @@
                     <a href="#" class="s__snapchat"><img src="img/snapchat.png" class="fa snapchat-img"></a>
                     <a href="#" class="s__viber"><img src="img/viber.png" class="fa viber-img"></a>
                 </div>
-            </div>
-             
+            </div> 
         </div>
+            
+            <div class="content">  
+                <!-- Add comment-->  
+            
+                <div class="content-post green" id="content-post">
+                <div class="info-post">
+                    <span class="date-bar">10:50</span>
+                    <p class="new-comment">Хоча фраза й нісенітна, вона має давню історію. Ця фраза впродовж</p>
+                </div>
+                <div class="like-post"><img src="img/eye-green.png" class="eye fa"> </div>
+            </div>
+                <div class="content-post red" id="content-post">
+                <div class="info-post red">
+                    <span class="date-bar">10:50</span>
+                    <p class="new-comment"> 
+                        Ця фраза впродовж багатьох сторіч використовувалася друкарями для </p>
+                </div>
+                <div class="like-post"><img src="img/eye-red.png" class="eye fa"></div>
+            </div>
+           
+                <div class="content-post yellow" id="content-post">
+                <div class="info-post yellow">
+                    <span class="date-bar">10:50</span>
+                    <p class="new-comment">
+                        Хоча фраза й нісенітна, вона має давню історію. Ця фраза впродовж багатьох</p>
+                </div>
+                <div class="like-post"><img src="img/eye-yellow.png" class="eye fa"></div>
+            </div>
+                <div class="content-post blu" id="content-post">
+                <div class="info-post blu">
+                     <span class="date-bar">10:50</span>
+                    <p class="new-comment">
+                       Ця фраза впродовж багатьох сторіч використовувалася друкарями для</p>
+                </div>
+                <div class="like-post"><img src="img/eye-blue.png" class="eye fa"></div>
+            </div>
+                 
+            </div>
+       
+     </div>
     </div>
 </body>
 </html>
